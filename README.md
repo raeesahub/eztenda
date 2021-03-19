@@ -1,1 +1,1 @@
-MVP for eztender built during Le Wagon Hackathon March 2021
+MVP for eztenda built during Le Wagon Hackathon March 2021
