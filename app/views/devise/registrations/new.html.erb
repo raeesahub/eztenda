@@ -15,6 +15,7 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+   <%= f.collection_radio_buttons :user_type, [["bar", 'Bar'], ["vendor", 'Supplier']], :first, :last %>
   </div>
 
   <div class="form-actions">
