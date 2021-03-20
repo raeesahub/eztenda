@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container d-flex flex-column">
 
   <% @tenders.each do |t| %>
     <div class="card-product">
@@ -7,7 +7,7 @@
         <h2>Looking for: <%= t.description %></h2>
         <% @duration = ((t.end_date - t.start_date).to_i / 30)  %></p>
         <%= t.volume %> units over <%= @duration %> months</p>
-        7 locations</p>
+        <%= t.business.number_of_venues %> locations</p>
         <% if t.active %></p>
           <span class="live">Live</span>
         <% else %>
@@ -15,10 +15,10 @@
         <% end %>
       </div>
       <div class="card-product-infos">
-          <h2>Last bid: £250</h2>
-          <%= link_to "More details", tenders_path, class: 'btn-home' %>
-        </div>
-  <% end %>
+        <h2>Last bid: £250</h2>
+        <%= link_to "More details", tenders_path, class: 'btn-home' %>
+      </div>
   </div>
+  <% end %>
 
 </div>
