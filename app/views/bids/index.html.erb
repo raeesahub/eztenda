@@ -1,5 +1,21 @@
-<% @bids.each do |b| %>
-    
-    <%= b.description %><%= b.amount %>
-    <% end %>
-    
+<div class="container">
+
+  <% @bids.each do |t| %>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2>Offering: <%= t.description %> to <%= t.tender.business.name %></h2>
+        Price: <%= t.amount %> £ </p>
+        <% if t.confirmed %></p>
+          <span style="color: green">Confirmed</span>
+        <% else %>
+          <span style="color: red">Pending</span>
+        <% end %>
+      </div>
+      <div class="card-product-infos">
+          <h2>Last bid: £<%= t.tender.bids.last.amount %></h2>
+        </div>
+  <% end %>
+  </div>
+
+</div>
