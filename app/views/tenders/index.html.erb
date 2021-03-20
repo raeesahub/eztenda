@@ -2,14 +2,14 @@
 
   <% @tenders.each do |t| %>
     <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <img src=<%= t.business.image_url %> />
       <div class="card-product-infos">
         <h2>Looking for: <%= t.description %></h2>
         <% @duration = ((t.end_date - t.start_date).to_i / 30)  %></p>
         <%= t.volume %> units over <%= @duration %> months</p>
         7 locations</p>
         <% if t.active %></p>
-          <span style="color: green">Live</span>
+          <span class="live">Live</span>
         <% else %>
           <span style="color: red">Ended</span>
         <% end %>

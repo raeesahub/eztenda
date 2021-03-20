@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_111645) do
   create_table "businesses", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"

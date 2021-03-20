@@ -3,6 +3,7 @@ class Initial < ActiveRecord::Migration[6.0]
     create_table :businesses do |t|
       t.string :name
       t.string :description
+      t.string :image_url
       t.timestamps
     end
     create_table :tenders do |t|
