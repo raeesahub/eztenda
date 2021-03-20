@@ -1,53 +1,54 @@
 <div class="container">
+  <section>
+    <% @tenders.each do |t| %>
+      <div class="card-product">
+        <img src= <%= t.business.image_url %> />
 
-  <% @tenders.each do |t| %>
-    <div class="card-product">
-      <img src= <%= t.business.image_url %> />
+        <div class="card-product-infos">
+          <h2>Looking for: <%= t.description %></h2>
+          <% @duration = ((t.end_date - t.start_date).to_i / 30)  %></p>
+          <%= t.volume %> units over <%= @duration %> months</p>
+          7 locations</p>
+          <% if t.active %></p>
+            <span class="live">Live</span>
+          <% else %>
+            <span style="color: red">Ended</span>
+          <% end %>
+        </div>
 
-      <div class="card-product-infos">
-        <h2>Looking for: <%= t.description %></h2>
-        <% @duration = ((t.end_date - t.start_date).to_i / 30)  %></p>
-        <%= t.volume %> units over <%= @duration %> months</p>
-        7 locations</p>
-        <% if t.active %></p>
-          <span class="live">Live</span>
-        <% else %>
-          <span style="color: red">Ended</span>
+        <div class="card-product-infos">
+          <h2>Number of bids: <%= t.bids.count %> </h2>
+          <%= link_to "More details", tenders_path, class: 'btn-home' %>
+        </div>
+      </div>
+
+      <h1>Bids:</h1>
+
+      <div class= "offers-list">
+        <% t.bids.each do |b|%>
+          <div class= "offers-list-card p-3">
+            <div class="offers-list-card_text">
+              <h3><%= b.description %></h3>
+              <p class="pt-3"><strong>Offer £</strong><%= b.amount %></p>
+              <p><strong>Incentives: </strong><%= b.incentives %></p>
+                          <p><%= b.confirmed %></p>
+
+            </div>
+            <% if b.confirmed == "pending" %>
+            <div class= "offers-list-card_text p-3">
+              <button type="button" class="btn-home" id="accept-button">
+              <%= button_to "Accept", {:controller => "bids", :action => "accept_bid",:user_id=> current_user.id,bid_id: b.id,tender_id: t.id},class: "my_class" , :method=>:post  %>
+              </button>
+              <button type="button" class="btn-home" id="reject-button">
+              <%= button_to "Reject", {:controller => "bids", :action => "reject_bid",:user_id=> current_user.id,bid_id: b.id,tender_id: t.id},class: "my_class" , :method=>:post  %>
+              </button>
+            </div>
+            <% end %>
+          </div>
         <% end %>
       </div>
-
-      <div class="card-product-infos">
-        <h2>Number of bids: <%= t.bids.count %> </h2>
-        <%= link_to "More details", tenders_path, class: 'btn-home' %>
-      </div>
-    </div>
-
-    <h1>Bids:</h1>
-
-    <div class= "offers-list">
-      <% t.bids.each do |b|%>
-        <div class= "offers-list-card p-3">
-          <div class="offers-list-card_text">
-            <h3><%= b.description %></h3>
-            <p><%= b.amount %></p>
-            <p><%= b.incentives %></p>
-                        <p><%= b.confirmed %></p>
-
-          </div>
-          <% if b.confirmed == "pending" %>
-          <div class= "offers-list-card_text p-3">
-            <button type="button" class="btn-home" id="accept-button">
-            <%= button_to "Accept", {:controller => "bids", :action => "accept_bid",:user_id=> current_user.id,bid_id: b.id,tender_id: t.id},class: "my_class" , :method=>:post  %>
-            </button>
-            <button type="button" class="btn-home" id="reject-button">
-            <%= button_to "Reject", {:controller => "bids", :action => "reject_bid",:user_id=> current_user.id,bid_id: b.id,tender_id: t.id},class: "my_class" , :method=>:post  %>
-            </button>
-          </div>
-          <% end %> 
-        </div>
-      <% end %>
-    </div>
-  <% end %>
+    <% end %>
+  </section>
 </div>
 
 

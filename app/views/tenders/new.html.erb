@@ -1,16 +1,19 @@
 <div class="container">
-  <h1>Add a new tender</h1>
+  <section>
+    <h1 class="text-center">Add a new tender</h1>
 
-<%= simple_form_for [@tender] do |f| %>
-<%= f.input :description %>
-<%= f.input :min_bid %>
-<%= f.input :start_date %>
-<%= f.input :end_date %>
-<%= f.input :volume %>
-<%= f.input :active %>
-<%= f.input :business_id, collection: @business %>
-<%= f.input :categories_id, collection: @categories, :label_method => :description %>
+      <%= simple_form_for [@tender] do |f| %>
+      <%= f.input :description %>
+      <%= f.input :min_bid %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.input :volume %>
+      <%= f.input :active %>
+      <%= f.input :business_id, collection: @business %>
+      <%= f.input :categories_id, collection: @categories, :label_method => :description %>
 
-<%= f.submit class: 'btn-home' %>
-<% end %>
+      <%= f.submit class: 'btn-home' %>
+      <% end %>
+
+  </section>
 </div>
