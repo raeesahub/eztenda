@@ -5,9 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "destroying seed files..."
+User.destroy_all
+puts "Destroyed!"
+
 
 puts "Seeding Project"
-
 
 puts "Creating bars..."
 bar1 = User.create(email:"test1@test.com",password:"password",user_type: "bar")
