@@ -116,7 +116,6 @@ tender5 = Tender.create!(
 bid1 = Bid.create!(
   description: "Gordons",
   amount: 500,
-  confirmed: false,
   incentives: "A single T-shirt",
   user_id: vendor1.id,
   tender_id: tender1.id,
@@ -126,7 +125,6 @@ bid1 = Bid.create!(
 bid2 = Bid.create!(
   description: "Tanquery",
   amount: 300,
-  confirmed: false,
   incentives: "200 glasses",
   user_id: vendor2.id,
   tender_id: tender1.id,
