@@ -4,7 +4,7 @@ class TendersController < ApplicationController
       @tenders = Tender.search(params[:query])
     elsif params[:category].present?
       category_id = params[:category].to_i
-      y = Tender.where(categories_id: category_id).pluck(:tender_id).uniq
+      y = Tender.where(categories_id: category_id)
       @tenders = y
     else
       @tenders = Tender.all
