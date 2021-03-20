@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "destroying seed files..."
-Business.destroy_all
 User.destroy_all
+Business.destroy_all
+
 Tender.destroy_all
 puts "Destroyed!"
 
@@ -30,7 +31,7 @@ tender1 = Tender.create!(
   end_date: Date.new(2022,3,21),
   volume: "1000 bottles",
   active: true,
-  business_id: Business.first.id
+  business_id: Business.first.id,
   )
 
 bid1 = Bid.create!(

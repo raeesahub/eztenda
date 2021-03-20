@@ -1,0 +1,30 @@
+<div class="container">
+
+  <% @tenders.each do |t| %>
+    <div class="card-product">
+      <img src=<%= t.business.image_url %> />
+      <div class="card-product-infos">
+        <h2>Looking for: <%= t.description %></h2>
+        <% @duration = ((t.end_date - t.start_date).to_i / 30)  %></p>
+        <%= t.volume %> units over <%= @duration %> months</p>
+        7 locations</p>
+        <% if t.active %></p>
+          <span class="live">Live</span>
+        <% else %>
+          <span style="color: red">Ended</span>
+        <% end %>
+      </div>
+      <div class="card-product-infos">
+          <h2>Number of bids: <%= t.bids.count %> </h2>
+          <%= link_to "More details", tenders_path, class: 'btn-home' %>
+        </div>
+        <div> Bids: 
+        <% t.bids.each do |b|%>
+            <% b.description %></p>
+
+            <% end %>
+            </div>
+
+  <% end %>
+
+</div>
