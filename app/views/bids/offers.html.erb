@@ -31,15 +31,19 @@
             <h3><%= b.description %></h3>
             <p><%= b.amount %></p>
             <p><%= b.incentives %></p>
+                        <p><%= b.confirmed %></p>
+
           </div>
+          <% if b.confirmed == "pending" %>
           <div class= "offers-list-card_text p-3">
             <button type="button" class="btn-home" id="accept-button">
-             Approve <i class="far fa-check-circle"></i>
+            <%= button_to "Accept", {:controller => "bids", :action => "accept_bid",:user_id=> current_user.id,bid_id: b.id,tender_id: t.id},class: "my_class" , :method=>:post  %>
             </button>
             <button type="button" class="btn-home" id="reject-button">
-              Reject  <i class="fas fa-ban"></i>
+            <%= button_to "Reject", {:controller => "bids", :action => "reject_bid",:user_id=> current_user.id,bid_id: b.id,tender_id: t.id},class: "my_class" , :method=>:post  %>
             </button>
           </div>
+          <% end %> 
         </div>
       <% end %>
     </div>
