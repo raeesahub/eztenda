@@ -10,7 +10,7 @@ class Initial < ActiveRecord::Migration[6.0]
     end
     create_table :tenders do |t|
       t.string :description
-      t.string :min_bid
+      t.integer :min_bid
       t.date :start_date
       t.date :end_date
       t.integer :volume
