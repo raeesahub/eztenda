@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  padding: 3rem 0;
+  @media (min-width: 40em) {
+    // header,
+    section {
+      padding: 7rem 0;
+    }
+  }
+}
