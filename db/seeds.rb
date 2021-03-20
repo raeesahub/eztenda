@@ -7,3 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Seeding Project"
+
+
+puts "Creating bars..."
+bar1 = User.create(email:"test1@test.com",password:"password",user_type: "bar")
+bar2 = User.create(email:"test2@test.com",password:"password",user_type: "bar")
+puts "Creating vendors..."
+vendor1 = User.create(email:"test3@test.com",password:"password",user_type: "vendor")
+vendor2 = User.create(email:"test4@test.com",password:"password",user_type: "vendor")
+
+puts "completed"
