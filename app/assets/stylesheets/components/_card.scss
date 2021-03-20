@@ -1,11 +1,12 @@
 .card-product {
   overflow: hidden;
-  height: 180px;
+  height: 160px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
 }
 
 .card-product img {
@@ -39,7 +40,6 @@
 
 .card-product .card-product-infos {
   padding: 16px;
-  flex-grow: 1;
   margin-left: 16px;
 }
 
