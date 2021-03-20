@@ -2,3 +2,30 @@
   display: inline;
   width: 88%;
 }
+
+
+/*login-form*/
+.form-login {
+  width: 700px;
+}
+
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+
+.simple_form {
+    padding: 40px;
+    border-radius: 20px;
+    background-color: white;
+
+    a {
+      color: #8e7f7f;
+    }
+}
+
+
+
