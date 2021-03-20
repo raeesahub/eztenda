@@ -10,10 +10,19 @@ Bid.destroy_all
 Tender.destroy_all
 Business.destroy_all
 User.destroy_all
+Category.destroy_all
 
 puts "Destroyed!"
 
 puts "Seeding Project"
+
+puts "Creating categories..."
+
+CATEGORIES = %w(gin sake tequila tonic\ water white\ wine red\ wine spritzer)
+
+CATEGORIES.each do |category|
+  Category.create!(description: category)
+end
 
 puts "Creating bars..."
 bar1 = User.create!(email:"test1@test.com",password:"password",user_type: "bar")
@@ -42,8 +51,9 @@ tender1 = Tender.create!(
   volume: "1000",
   active: true,
   min_bid: "£1000",
-  business_id: be_at_one.id
-  )
+  business_id: be_at_one.id,
+  categories_id: Category.find_by(description: "gin").id
+)
 
 tender2 = Tender.create!(
   description: "Tonic Water",
@@ -52,7 +62,8 @@ tender2 = Tender.create!(
   volume: "2500",
   active: true,
   min_bid: "£750",
-  business_id: ping_pong.id
+  business_id: ping_pong.id,
+  categories_id: Category.find_by(description: "tonic water").id
   )
 
 tender3 = Tender.create!(
@@ -62,7 +73,8 @@ tender3 = Tender.create!(
   volume: "500",
   active: true,
   min_bid: "£300",
-  business_id: eat_tokyo.id
+  business_id: eat_tokyo.id,
+  categories_id: Category.find_by(description: "sake").id
   )
 
 tender4 = Tender.create!(
@@ -72,7 +84,8 @@ tender4 = Tender.create!(
   volume: "900",
   active: true,
   min_bid: "£500",
-  business_id: las_iguanas.id
+  business_id: las_iguanas.id,
+  categories_id: Category.find_by(description: "tequila").id
   )
 
 bid1 = Bid.create!(
