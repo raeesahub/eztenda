@@ -10,10 +10,19 @@ Bid.destroy_all
 Tender.destroy_all
 Business.destroy_all
 User.destroy_all
+Category.destroy_all
 
 puts "Destroyed!"
 
 puts "Seeding Project"
+
+puts "Creating categories..."
+
+CATEGORIES = %w(gin sake tequila tonic\ water white\ wine red\ wine spritzer)
+
+CATEGORIES.each do |category|
+  Category.create!(description: category)
+end
 
 puts "Creating bars..."
 bar1 = User.create!(email:"test1@test.com",password:"password",user_type: "bar")
