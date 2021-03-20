@@ -1,1 +1,33 @@
 // Specific CSS for your home-page
+
+h1 {
+  font-size: 84px;
+}
+
+h2 {
+  color: $red;
+  font-size: 36px;
+}
+
+p {
+  color: white;
+  margin-bottom: 24px;
+}
+
+.red-font {
+  color: $red;
+}
+
+.btn-home {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $red;
+  transition: background 0.3s ease;
+}
+
+.btn-home:hover {
+  background: #EA3F2C;
+  color: white;
+  text-decoration: none;
+}
