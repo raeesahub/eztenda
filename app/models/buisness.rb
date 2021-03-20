@@ -1,2 +1,0 @@
-class Buisness < ApplicationRecord
-end
