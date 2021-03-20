@@ -1,18 +1,19 @@
 // Specific CSS for your home-page
+.banner-home {
+  h1 {
+    font-size: 84px;
+    color: white;
+  }
 
-h1 {
-  font-size: 84px;
-  color: white;
-}
+  h2 {
+    color: $red;
+    font-size: 36px;
+  }
 
-h2 {
-  color: $red;
-  font-size: 36px;
-}
-
-p {
-  color: white;
-  margin-bottom: 24px;
+  p {
+    color: white;
+    margin-bottom: 24px;
+  }
 }
 
 .red-font {
