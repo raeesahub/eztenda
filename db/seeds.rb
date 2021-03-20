@@ -7,5 +7,3 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Seeding Project"
-
-User.create(email:"test@test.com",password:"password")
