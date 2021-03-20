@@ -30,7 +30,11 @@
         <% end %>
       </div>
       <div class="card-product-infos">
-        <h2>Last bid: £250</h2>
+        <% if t.bids.length > 0 %>
+        <h2>Last bid: <%= t.bids.order(:amount).last.amount %> </h2>
+        <% else %>
+        <h2>No bids yet!<h2> 
+        <% end %>
         <%= link_to "More details", tender_path(t), class: 'btn-home' %>
       </div>
   </div>
