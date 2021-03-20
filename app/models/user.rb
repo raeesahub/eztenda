@@ -7,6 +7,5 @@ class User < ApplicationRecord
   has_many :businesses, dependent: :delete_all
   has_many :bids, dependent: :delete_all
   validates :user_type, inclusion: { in: %w(bar vendor) }
-
 end
 
