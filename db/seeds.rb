@@ -55,7 +55,7 @@ las_iguanas = Business.create!(name: "Las Iguanas", description: "Eat Latin, Dri
 eat_tokyo = Business.create!(name: "Eat Tokyo", description: "Japanese restaurant", location: "London", number_of_venues: 2, user_id: bar4.id, image_url: "https://github.com/raeesahub/eztenda-files/blob/master/eattokyo.png?raw=true
 ")
 
-slag_lettuce = Business.create!(name: "Slag & Lettuce", description: "Cocktail Bar", location: "London", number_of_venues: 8, user_id: bar5.id, image_url: "https://github.com/raeesahub/eztenda-files/blob/master/eattokyo.png?raw=true
+slug_lettuce = Business.create!(name: "Slug & Lettuce", description: "Cocktail Bar", location: "London", number_of_venues: 8, user_id: bar5.id, image_url: "https://github.com/raeesahub/eztenda-files/blob/master/eattokyo.png?raw=true
 ")
 
 puts "Creating tenders..."
@@ -110,8 +110,52 @@ tender5 = Tender.create!(
   volume: "800",
   active: true,
   min_bid: "300",
-  business_id: slag_lettuce.id
+  business_id: slug_lettuce.id
   )
+
+tender6 = Tender.create!(
+  description: "Tonic Water",
+  start_date: Date.new(2021,3,21),
+  end_date: Date.new(2022,3,21),
+  volume: "5000",
+  active: true,
+  min_bid: "1000",
+  business_id: be_at_one.id,
+  categories_id: Category.find_by(description: "tonic water").id
+)
+
+tender7 = Tender.create!(
+  description: "White Wine",
+  start_date: Date.new(2021,3,21),
+  end_date: Date.new(2022,11,21),
+  volume: "700",
+  active: true,
+  min_bid: "1000",
+  business_id: be_at_one.id,
+  categories_id: Category.find_by(description: "white wine").id
+)
+
+tender8 = Tender.create!(
+  description: "Spritzer",
+  start_date: Date.new(2021,3,21),
+  end_date: Date.new(2022,9,21),
+  volume: "6000",
+  active: true,
+  min_bid: "1000",
+  business_id: be_at_one.id,
+  categories_id: Category.find_by(description: "spritzer").id
+)
+
+tender9 = Tender.create!(
+  description: "Red Wine",
+  start_date: Date.new(2021,3,21),
+  end_date: Date.new(2022,9,21),
+  volume: "6000",
+  active: true,
+  min_bid: "1000",
+  business_id: ping_pong.id,
+  categories_id: Category.find_by(description: "red wine").id
+)
 
 bid1 = Bid.create!(
   description: "Gordons",
@@ -121,7 +165,6 @@ bid1 = Bid.create!(
   tender_id: tender1.id,
 )
 
-
 bid2 = Bid.create!(
   description: "Tanquery",
   amount: 300,
@@ -130,6 +173,28 @@ bid2 = Bid.create!(
   tender_id: tender1.id,
 )
 
+bid3 = Bid.create!(
+  description: "The Botanist",
+  amount: 600,
+  incentives: "plus a further £600 if more than 1000 units sold",
+  user_id: vendor1.id,
+  tender_id: tender1.id,
+)
+bid4 = Bid.create!(
+  description: "Hendrick's",
+  amount: 700,
+  incentives: "200 glasses",
+  user_id: vendor1.id,
+  tender_id: tender1.id,
+)
+
+bid5 = Bid.create!(
+  description: "Bombay Sapphire",
+  amount: 800,
+  incentives: "plus a further £800 if more than 1000 units sold",
+  user_id: vendor1.id,
+  tender_id: tender1.id,
+)
 
 
 puts "completed"
