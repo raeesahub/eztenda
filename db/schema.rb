@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_111645) do
   create_table "bids", force: :cascade do |t|
     t.string "description"
     t.integer "amount"
-    t.boolean "confirmed"
+    t.string "confirmed", default: "pending"
     t.string "incentives"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_111645) do
 
   create_table "tenders", force: :cascade do |t|
     t.string "description"
-    t.string "min_bid"
+    t.integer "min_bid"
     t.date "start_date"
     t.date "end_date"
     t.integer "volume"

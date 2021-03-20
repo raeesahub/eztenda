@@ -20,7 +20,7 @@ class Initial < ActiveRecord::Migration[6.0]
     create_table :bids do |t|
       t.string :description
       t.integer :amount
-      t.boolean :confirmed
+      t.string :confirmed,default: "pending"
       t.string :incentives
       t.timestamps
     end
