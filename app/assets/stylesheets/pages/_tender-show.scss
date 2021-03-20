@@ -1,0 +1,27 @@
+.tender {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+.bar-info {
+
+
+}
+
+.bar-info__text {
+margin-top: 30px;
+
+  h1 {
+    padding-bottom: 20px;
+  }
+}
+
+.bid-amount {
+  color:red;
+}
+
+.bid-start {
+  padding-top: 30px;
+}

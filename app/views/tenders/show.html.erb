@@ -9,44 +9,45 @@
       <div class="bar-info__text">
         <h1>Slug & Lettuce</h1>
         <p>Chain Bars</p>
-        <p>Location: London</p>
-        <p>Venues: 10</p>
+        <p><strong>Location: </strong>London</p>
+        <p><strong>Venues: </strong>10</p>
       </div>
     </div>
 
     <div class="tender-bid">
       <div>
         <h1><%= @tender.description %></h1>
+        <p>Expected to sell:<%= @tender.volume %>bottles</p>
+        <p><%=((@tender.end_date - @tender.start_date).to_i / 30)%>months</p>
       </div>
       <div class="bid-start">
-        <p>Min Bid</p>
-        <h1>£4000</h1>
+        <p style= "color: #8e7f7f">MIN BID:</p>
+        <h2>£3000</h2>
       </div>
       <div class="bid-current">
         <div class="bid-start">
-          <p>Current Bid</p>
-          <h1>£4000</h1>
+          <p Style= "color: #8e7f7f">CURRENT BID</p>
+          <h2 class="bid-amount">£4000</h2>
         </div>
+        <hr>
         <form>
           <div class="form-group">
-            <label for="formGroupExampleInput">Your Bid</label>
+            <label for="formGroupExampleInput">Your Cash Bid</label>
             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter max bid">
           </div>
           <div class="form-group">
             <label for="formGroupExampleInput2">Incentives</label>
             <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Any bonuses">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary btn-home">Submit</button>
         </form>
       </div>
       <div class="bid-submit">
 
       </div>
-
     </div>
-
-
   </section>
+
 
 
 </div>
