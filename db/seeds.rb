@@ -10,6 +10,7 @@ Bid.destroy_all
 Tender.destroy_all
 Business.destroy_all
 User.destroy_all
+
 puts "Destroyed!"
 
 puts "Seeding Project"

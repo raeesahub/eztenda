@@ -4,4 +4,8 @@ class BidsController < ApplicationController
         @bids = Bid.where(user_id: @user.id)
         return @bids
     end
+
+    def offers
+        @tenders = Business.where(user_id: current_user.id).map(&:tenders).flatten
+    end
 end
