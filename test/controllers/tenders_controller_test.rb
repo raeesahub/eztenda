@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TenderControllerTest < ActionDispatch::IntegrationTest
+class TendersControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

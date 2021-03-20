@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 2021_03_20_111645) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "users_id"
-    t.index ["users_id"], name: "index_businesses_on_users_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_businesses_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -48,9 +48,9 @@ ActiveRecord::Schema.define(version: 2021_03_20_111645) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "categories_id"
-    t.bigint "users_id"
+    t.bigint "user_id"
     t.index ["categories_id"], name: "index_products_on_categories_id"
-    t.index ["users_id"], name: "index_products_on_users_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "tenders", force: :cascade do |t|
@@ -61,9 +61,9 @@ ActiveRecord::Schema.define(version: 2021_03_20_111645) do
     t.boolean "active"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "businesses_id"
+    t.bigint "business_id"
     t.bigint "categories_id"
-    t.index ["businesses_id"], name: "index_tenders_on_businesses_id"
+    t.index ["business_id"], name: "index_tenders_on_business_id"
     t.index ["categories_id"], name: "index_tenders_on_categories_id"
   end
 
@@ -82,9 +82,9 @@ ActiveRecord::Schema.define(version: 2021_03_20_111645) do
 
   add_foreign_key "bids", "products", column: "products_id"
   add_foreign_key "bids", "tenders", column: "tenders_id"
-  add_foreign_key "businesses", "users", column: "users_id"
+  add_foreign_key "businesses", "users"
   add_foreign_key "products", "categories", column: "categories_id"
-  add_foreign_key "products", "users", column: "users_id"
-  add_foreign_key "tenders", "businesses", column: "businesses_id"
+  add_foreign_key "products", "users"
+  add_foreign_key "tenders", "businesses"
   add_foreign_key "tenders", "categories", column: "categories_id"
 end
