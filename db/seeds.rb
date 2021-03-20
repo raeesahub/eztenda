@@ -18,7 +18,7 @@ puts "Seeding Project"
 
 puts "Creating categories..."
 
-CATEGORIES = %w(gin sake tequila tonic\ water white\ wine red\ wine spritzer)
+CATEGORIES = %w(gin sake tequila tonic\ water white\ wine red\ wine spritzer whisky)
 
 CATEGORIES.each do |category|
   Category.create!(description: category)
@@ -110,7 +110,8 @@ tender5 = Tender.create!(
   volume: "800",
   active: true,
   min_bid: "300",
-  business_id: slug_lettuce.id
+  business_id: slug_lettuce.id,
+  categories_id: Category.find_by(description: "whisky").id
   )
 
 tender6 = Tender.create!(
@@ -157,6 +158,18 @@ tender9 = Tender.create!(
   categories_id: Category.find_by(description: "red wine").id
 )
 
+tender5 = Tender.create!(
+  description: "Spritzer",
+  start_date: Date.new(2021,3,21),
+  end_date: Date.new(2021,11,21),
+  volume: "1000",
+  active: true,
+  min_bid: "300",
+  business_id: slug_lettuce.id,
+  categories_id: Category.find_by(description: "spritzer").id
+  )
+
+
 bid1 = Bid.create!(
   description: "Gordons",
   amount: 500,
@@ -196,5 +209,14 @@ bid5 = Bid.create!(
   tender_id: tender1.id,
 )
 
+tender5 = Tender.create!(
+  description: "Spritzer",
+  start_date: Date.new(2021,3,21),
+  end_date: Date.new(2021,11,21),
+  volume: "800",
+  active: true,
+  min_bid: "300",
+  business_id: slug_lettuce.id
+  )
 
 puts "completed"
