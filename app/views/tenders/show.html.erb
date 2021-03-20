@@ -1,16 +1,15 @@
 
 <div class="container">
-
   <section class="tender">
     <div class="bar-info">
       <div class="bar-info__img">
-        <img src="/assets/Slug-and-Lettuce.jpeg" alt="">
+        <img src="<%= @tender.business.image_url %>" alt="" style="width:100%">
       </div>
       <div class="bar-info__text">
-        <h1>Slug & Lettuce</h1>
-        <p>Chain Bars</p>
-        <p><strong>Location: </strong>London</p>
-        <p><strong>Venues: </strong>10</p>
+        <h1><%= @tender.business.name %></h1>
+        <p><%= @tender.business.description %></p>
+        <p><strong>Location: </strong><%= @tender.business.location%></p>
+        <p><strong>Venues: </strong>><%= @tender.business.number_of_venues%></p>
       </div>
     </div>
 
@@ -22,18 +21,22 @@
       </div>
       <div class="bid-start">
         <p style= "color: #8e7f7f">MIN BID:</p>
-        <h2>£3000</h2>
+        <h2><%= @tender.min_bid%></h2>
       </div>
+      <% if @tender.bids.length > 0 %>
       <div class="bid-current">
         <div class="bid-start">
           <p Style= "color: #8e7f7f">CURRENT BID</p>
-          <h2 class="bid-amount">£4000</h2>
+          <h2 class="bid-amount">£ <%= @tender.bids.order(:amount).last.amount %></h2>
         </div>
+        <% else %> 
+        No Bids so far ! 
+        <% end %> 
         <hr>
         <% if current_user.user_type === "vendor" %>
         <%= simple_form_for [@tender, @bids] do |f| %>
           <%= f.input :description, label: "Product"%>
-          <%= f.input :amount, label: "Signing Bus"%>
+          <%= f.input :amount, label: "Signing Bonus"%>
           <%= f.input :incentives, label: "Incentives"%>
           <%= f.submit 'Request Booking', class: 'btn btn-danger mx-auto d-block mt-2' %>
         <%end%>
