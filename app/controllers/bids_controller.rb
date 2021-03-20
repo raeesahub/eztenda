@@ -31,9 +31,14 @@ class BidsController < ApplicationController
   def accept_bid
     @bid = Bid.find(params[:bid_id])
     @tender = Tender.find_by_id(params[:tender_id])
-    if @tender.business.user_id === current_user.id
+    if @tender.business.user_id == current_user.id
+    @tender.active = false
+    @tender.save
     @bid.confirmed = "accepted"
     @bid.save
+    @tender.bids.each do |b| 
+      b.update(confirmed: "rejected" ) if b.confirmed == "pending"
+    end
     redirect_to offers_path, notice: 'Bidding was accepted.'
     end
   end
@@ -41,7 +46,7 @@ class BidsController < ApplicationController
   def reject_bid
     @bid = Bid.find(params[:bid_id])
     @tender = Tender.find_by_id(params[:tender_id])
-    if @tender.business.user_id = current_user.id
+    if @tender.business.user_id == current_user.id
     @bid.confirmed = "rejected"
     @bid.save
     redirect_to offers_path, notice: 'Bidding was rejected.'
