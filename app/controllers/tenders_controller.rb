@@ -5,5 +5,6 @@ class TendersController < ApplicationController
   
   def show
     @tender = Tender.find(params[:id])
+    @bids = Bid.new
   end
 end
