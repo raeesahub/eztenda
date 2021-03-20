@@ -22,10 +22,12 @@ ActiveRecord::Schema.define(version: 2021_03_20_111645) do
     t.string "incentives"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "tenders_id"
-    t.bigint "products_id"
-    t.index ["products_id"], name: "index_bids_on_products_id"
-    t.index ["tenders_id"], name: "index_bids_on_tenders_id"
+    t.bigint "tender_id"
+    t.bigint "product_id"
+    t.bigint "user_id"
+    t.index ["product_id"], name: "index_bids_on_product_id"
+    t.index ["tender_id"], name: "index_bids_on_tender_id"
+    t.index ["user_id"], name: "index_bids_on_user_id"
   end
 
   create_table "businesses", force: :cascade do |t|
@@ -47,9 +49,9 @@ ActiveRecord::Schema.define(version: 2021_03_20_111645) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "categories_id"
+    t.bigint "category_id"
     t.bigint "user_id"
-    t.index ["categories_id"], name: "index_products_on_categories_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -80,10 +82,11 @@ ActiveRecord::Schema.define(version: 2021_03_20_111645) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bids", "products", column: "products_id"
-  add_foreign_key "bids", "tenders", column: "tenders_id"
+  add_foreign_key "bids", "products"
+  add_foreign_key "bids", "tenders"
+  add_foreign_key "bids", "users"
   add_foreign_key "businesses", "users"
-  add_foreign_key "products", "categories", column: "categories_id"
+  add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
   add_foreign_key "tenders", "businesses"
   add_foreign_key "tenders", "categories", column: "categories_id"

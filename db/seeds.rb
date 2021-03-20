@@ -24,7 +24,7 @@ puts "Creating businesses..."
 Business.create!(name: "Be At One", description: "Cocktail bar", user_id: User.first.id)
 
 puts "Creating tenders..."
-Tender.create!(
+tender1 = Tender.create!(
   description: "Gin",
   start_date: Date.new(2021,3,21),
   end_date: Date.new(2022,3,21),
@@ -32,6 +32,16 @@ Tender.create!(
   active: true,
   business_id: Business.first.id
   )
+
+bid1 = Bid.create!(
+  description: "Gordons",
+  amount: 500,
+  confirmed: false,
+  incentives: "A single T-shirt",
+  user_id: vendor1.id,
+  tender_id: tender1.id,
+
+)
 
 
 puts "completed"
