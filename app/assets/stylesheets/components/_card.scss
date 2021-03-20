@@ -62,3 +62,24 @@
 }
 
 
+/*cards with bids on offers page */
+
+.offers-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  justify-content: center;
+}
+
+.offers-list-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  width: 400px;
+  // height: 150px;
+  // align-items: flex-start;
+  border-radius: 10px;
+}
+
+.offers-list-card_text {
+  text-align: center;
+}
