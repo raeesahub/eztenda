@@ -65,7 +65,7 @@ tender1 = Tender.create!(
   end_date: Date.new(2022,3,21),
   volume: "1000",
   active: true,
-  min_bid: "£1000",
+  min_bid: "1000",
   business_id: be_at_one.id,
   categories_id: Category.find_by(description: "gin").id
 )
@@ -76,7 +76,7 @@ tender2 = Tender.create!(
   end_date: Date.new(2022,6,21),
   volume: "2500",
   active: true,
-  min_bid: "£750",
+  min_bid: "750",
   business_id: ping_pong.id,
   categories_id: Category.find_by(description: "tonic water").id
   )
@@ -87,7 +87,7 @@ tender3 = Tender.create!(
   end_date: Date.new(2021,9,21),
   volume: "500",
   active: true,
-  min_bid: "£300",
+  min_bid: "300",
   business_id: eat_tokyo.id,
   categories_id: Category.find_by(description: "sake").id
   )
@@ -98,7 +98,7 @@ tender4 = Tender.create!(
   end_date: Date.new(2021,11,21),
   volume: "900",
   active: true,
-  min_bid: "£500",
+  min_bid: "500",
   business_id: las_iguanas.id,
   categories_id: Category.find_by(description: "tequila").id
   )
@@ -109,7 +109,7 @@ tender5 = Tender.create!(
   end_date: Date.new(2021,11,21),
   volume: "800",
   active: true,
-  min_bid: "£300",
+  min_bid: "300",
   business_id: slag_lettuce.id
   )
 
