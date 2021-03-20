@@ -1,5 +1,20 @@
 <div class="container d-flex flex-column">
 
+  <%= form_tag tenders_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a tender"
+    %>
+    <%= submit_tag "Search", class: "btn-home" %>
+  <% end %>
+
+  <div class="d-flex flex-wrap">
+    <% Category.all.each do |category| %>
+      <%= link_to category.description, tenders_path, class: "btn-category-tag #{'btn-category-active' if params[:category] == category.id.to_s}"  %>
+    <% end %>
+  </div>
+
   <% @tenders.each do |t| %>
     <div class="card-product">
       <img src=<%= t.business.image_url %> />
