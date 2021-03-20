@@ -21,7 +21,7 @@ vendor1 = User.create!(email:"test3@test.com",password:"password",user_type: "ve
 vendor2 = User.create!(email:"test4@test.com",password:"password",user_type: "vendor")
 
 puts "Creating businesses..."
-Business.create!(name: "Be At One", description: "Cocktail bar", user_id: User.first.id)
+Business.create!(name: "Be At One", description: "Cocktail bar", user_id: User.first.id, image_url: "https://raw.githubusercontent.com/raeesahub/eztenda-files/master/beatone.png")
 
 puts "Creating tenders..."
 tender1 = Tender.create!(
