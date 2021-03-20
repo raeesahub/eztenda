@@ -2,7 +2,8 @@
 
   <% @tenders.each do |t| %>
     <div class="card-product">
-      <img src=<%= t.business.image_url %> />
+      <img src= <%= t.business.image_url %> />
+
       <div class="card-product-infos">
         <h2>Looking for: <%= t.description %></h2>
         <% @duration = ((t.end_date - t.start_date).to_i / 30)  %></p>
@@ -14,17 +15,35 @@
           <span style="color: red">Ended</span>
         <% end %>
       </div>
+
       <div class="card-product-infos">
-          <h2>Number of bids: <%= t.bids.count %> </h2>
-          <%= link_to "More details", tenders_path, class: 'btn-home' %>
+        <h2>Number of bids: <%= t.bids.count %> </h2>
+        <%= link_to "More details", tenders_path, class: 'btn-home' %>
+      </div>
+    </div>
+
+    <h1>Bids:</h1>
+
+    <div class= "offers-list">
+      <% t.bids.each do |b|%>
+        <div class= "offers-list-card p-3">
+          <div class="offers-list-card_text">
+            <h3><%= b.description %></h3>
+            <p><%= b.amount %></p>
+            <p><%= b.incentives %></p>
+          </div>
+          <div class= "offers-list-card_text p-3">
+            <button type="button" class="btn-home" id="accept-button">
+             Approve <i class="far fa-check-circle"></i>
+            </button>
+            <button type="button" class="btn-home" id="reject-button">
+              Reject  <i class="fas fa-ban"></i>
+            </button>
+          </div>
         </div>
-        <div> Bids: 
-        <% t.bids.each do |b|%>
-            <% b.description %></p>
-
-            <% end %>
-            </div>
-
+      <% end %>
+    </div>
   <% end %>
-
 </div>
+
+

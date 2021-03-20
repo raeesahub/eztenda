@@ -18,21 +18,36 @@ puts "Seeding Project"
 puts "Creating bars..."
 bar1 = User.create!(email:"test1@test.com",password:"password",user_type: "bar")
 bar2 = User.create!(email:"test2@test.com",password:"password",user_type: "bar")
+bar3 = User.create!(email:"test3@test.com",password:"password",user_type: "bar")
+bar4 = User.create!(email:"test4@test.com",password:"password",user_type: "bar")
+bar5 = User.create!(email:"test5@test.com",password:"password",user_type: "bar")
+bar6 = User.create!(email:"test6@test.com",password:"password",user_type: "bar")
+bar7 = User.create!(email:"test7@test.com",password:"password",user_type: "bar")
+bar8 = User.create!(email:"test8@test.com",password:"password",user_type: "bar")
 puts "Creating vendors..."
-vendor1 = User.create!(email:"test3@test.com",password:"password",user_type: "vendor")
-vendor2 = User.create!(email:"test4@test.com",password:"password",user_type: "vendor")
+vendor1 = User.create!(email:"test9@test.com",password:"password",user_type: "vendor")
+vendor2 = User.create!(email:"test10@test.com",password:"password",user_type: "vendor")
+vendor3 = User.create!(email:"test11@test.com",password:"password",user_type: "vendor")
+vendor4 = User.create!(email:"test12@test.com",password:"password",user_type: "vendor")
+vendor5 = User.create!(email:"test13@test.com",password:"password",user_type: "vendor")
+vendor6 = User.create!(email:"test14@test.com",password:"password",user_type: "vendor")
+vendor7 = User.create!(email:"test15@test.com",password:"password",user_type: "vendor")
+vendor8 = User.create!(email:"test16@test.com",password:"password",user_type: "vendor")
+
 
 puts "Creating businesses..."
-be_at_one = Business.create!(name: "Be At One", description: "Cocktail bar", location: "London", number_of_venues: 15, user_id: User.first.id, image_url: "https://raw.githubusercontent.com/raeesahub/eztenda-files/master/beatone.png")
+be_at_one = Business.create!(name: "Be At One", description: "Cocktail bar", location: "London", number_of_venues: 15, user_id: bar1.id, image_url: "https://raw.githubusercontent.com/raeesahub/eztenda-files/master/beatone.png")
 ping_pong = Business.create!(name: "Ping Pong", description: "Dim sum restaurant",
-location: "London", number_of_venues: 5, user_id: User.first.id, image_url: "https://d3atsf3fgek2rw.cloudfront.net/content/uploads/2013/06/Unknown8.jpeg")
+location: "London", number_of_venues: 5, user_id: bar2.id, image_url: "https://d3atsf3fgek2rw.cloudfront.net/content/uploads/2013/06/Unknown8.jpeg")
 
-las_iguanas = Business.create!(name: "Las Iguanas", description: "Eat Latin, Drink Latin",location: "London", number_of_venues: 9, user_id: User.first.id, image_url: "https://www.regent-court.co.uk/wp-content/uploads/2018/01/las-iguanas.png
+las_iguanas = Business.create!(name: "Las Iguanas", description: "Eat Latin, Drink Latin",location: "London", number_of_venues: 9, user_id: bar3.id, image_url: "https://www.regent-court.co.uk/wp-content/uploads/2018/01/las-iguanas.png
 ")
 
-eat_tokyo = Business.create!(name: "Eat Tokyo", description: "Japanese restaurant", location: "London", number_of_venues: 2, user_id: User.first.id, image_url: "https://github.com/raeesahub/eztenda-files/blob/master/eattokyo.png?raw=true
+eat_tokyo = Business.create!(name: "Eat Tokyo", description: "Japanese restaurant", location: "London", number_of_venues: 2, user_id: bar4.id, image_url: "https://github.com/raeesahub/eztenda-files/blob/master/eattokyo.png?raw=true
 ")
 
+slag_lettuce = Business.create!(name: "Slag & Lettuce", description: "Cocktail Bar", location: "London", number_of_venues: 8, user_id: bar5.id, image_url: "https://github.com/raeesahub/eztenda-files/blob/master/eattokyo.png?raw=true
+")
 
 puts "Creating tenders..."
 tender1 = Tender.create!(
@@ -75,6 +90,16 @@ tender4 = Tender.create!(
   business_id: las_iguanas.id
   )
 
+tender5 = Tender.create!(
+  description: "Whisky",
+  start_date: Date.new(2021,3,21),
+  end_date: Date.new(2021,11,21),
+  volume: "800",
+  active: true,
+  min_bid: "£300",
+  business_id: slag_lettuce.id
+  )
+
 bid1 = Bid.create!(
   description: "Gordons",
   amount: 500,
@@ -83,6 +108,17 @@ bid1 = Bid.create!(
   user_id: vendor1.id,
   tender_id: tender1.id,
 )
+
+
+bid2 = Bid.create!(
+  description: "Tanquery",
+  amount: 300,
+  confirmed: false,
+  incentives: "200 glasses",
+  user_id: vendor2.id,
+  tender_id: tender1.id,
+)
+
 
 
 puts "completed"
