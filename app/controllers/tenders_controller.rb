@@ -1,8 +1,12 @@
 class TendersController < ApplicationController
   def index
-    @tenders = Tender.all
+    if params[:query].present?
+      @tenders = Tender.search(params[:query])
+    else
+      @tenders = Tender.all
+    end
   end
-  
+
   def show
     @tender = Tender.find(params[:id])
   end

@@ -1,5 +1,14 @@
 <div class="container d-flex flex-column">
 
+<%= form_tag tenders_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a tender"
+  %>
+  <%= submit_tag "Search", class: "btn-home" %>
+<% end %>
+
   <% @tenders.each do |t| %>
     <div class="card-product">
       <img src=<%= t.business.image_url %> />
