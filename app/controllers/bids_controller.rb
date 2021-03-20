@@ -28,6 +28,26 @@ class BidsController < ApplicationController
     @tenders = Business.where(user_id: current_user.id).map(&:tenders).flatten
   end
 
+  def accept_bid
+    @bid = Bid.find(params[:bid_id])
+    @tender = Tender.find_by_id(params[:tender_id])
+    if @tender.business.user_id === current_user.id
+    @bid.confirmed = "accepted"
+    @bid.save
+    redirect_to offers_path, notice: 'Bidding was accepted.'
+    end
+  end
+
+  def reject_bid
+    @bid = Bid.find(params[:bid_id])
+    @tender = Tender.find_by_id(params[:tender_id])
+    if @tender.business.user_id = current_user.id
+    @bid.confirmed = "rejected"
+    @bid.save
+    redirect_to offers_path, notice: 'Bidding was rejected.'
+    end
+  end
+
   private
   def bid_params
     params.require(:bid).permit(:description, :amount, :incentives)

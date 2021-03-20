@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   resources :businesses
   get 'offers', to: 'bids#offers'
   resources :bids,only:[:create,:index]
+  resources :bids do 
+    collection do 
+      post :accept_bid
+      post :reject_bid
+    end
+  end
 
   resources :tenders do
     resources :bids, only: [:new, :create]
