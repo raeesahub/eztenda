@@ -34,23 +34,25 @@
           <h2 class="bid-amount"><strong>£ <%= @tender.bids.order(:amount).last.amount %></strong></h2>
         </div>
         <% else %>
-        No Bids so far !
+        <p>No Bids so far !</p>
         <% end %>
 
+
+
+        <% if current_user.user_type === "vendor" %>
         <div class="bid-submit">
           <div class="titles2 text-center">
           <h3 class="mt-5">MAKE YOUR BID</h3>
           <hr>
-        </div>
-          <% if current_user.user_type === "vendor" %>
+          </div>
           <%= simple_form_for [@tender, @bids] do |f| %>
             <%= f.input :description, label: "Product"%>
             <%= f.input :amount, label: "Signing Bonus"%>
             <%= f.input :incentives, label: "Incentives"%>
             <%= f.submit 'Submit Bid', class: 'btn btn-danger mx-auto d-block mt-2' %>
           <%end%>
-          <%end%>
         </div>
+        <%end%>
       </div>
     </div>
   </section>
