@@ -198,14 +198,14 @@ tender12 = Tender.create!(
   )
 
 tender13 = Tender.create!(
-  description: "Spritzer",
+  description: "White Wine",
   start_date: Date.new(2021,3,21),
   end_date: Date.new(2022,3,21),
   volume: "9000",
   active: true,
   min_bid: "1000",
-  business_id: be_at_one.id,
-  categories_id: Category.find_by(description: "spritzer").id
+  business_id: dishoom.id,
+  categories_id: Category.find_by(description: "white wine").id
   )
 
 tender12 = Tender.create!(
