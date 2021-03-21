@@ -3,11 +3,11 @@
       <% @bids.each do |t| %>
         <div class="card-product">
           <img src= <%= t.tender.business.image_url %> />
-          <div class="card-product-infos">
+          <div class="card-product-infos ">
             <h2>Offering: <%= t.description %> to <%= t.tender.business.name %></h2>
             <p>Price: £<%= t.amount %></p>
             <% if !t.product.nil? %>
-            <%= t.product.name %> 
+                        <%= link_to "#{t.product.name}", products_path(t.product), class: 'btn-home' %>
             <% end %> 
             <div class="active-btn">
               <% if t.confirmed == "accepted" %></p>
