@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :businesses
   get 'offers', to: 'bids#offers'
   get 'products/index', to: 'products#index'
-  get 'products/:id', to: 'products#show'
+  get 'products/:id', to: 'products#show', as: 'products'
 
   get '/contracts/index',to: 'contracts#index'
 
