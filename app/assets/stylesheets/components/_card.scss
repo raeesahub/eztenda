@@ -1,19 +1,19 @@
 .card-product {
   overflow: hidden;
-  height: 160px;
+  height: 200px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 30px;
 }
 
 .card-product img {
   height: 80%;
   object-fit: cover;
   border-radius: 50%;
-  margin-left: 24px;
+  margin-left: 60px;
 }
 
 .card-product h2 {
@@ -39,7 +39,7 @@
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  padding-right: 60px;
 }
 
 .card-product .card-product-infos .last-child {
@@ -82,4 +82,8 @@
 
 .offers-list-card_text {
   text-align: center;
+}
+
+.active-btn {
+  margin-top: 30px;
 }

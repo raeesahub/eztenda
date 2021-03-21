@@ -24,17 +24,19 @@
         <% @duration = ((t.end_date - t.start_date).to_i / 30)  %></p>
         <%= t.volume %> units over <%= @duration %> months</p>
         <%= t.business.number_of_venues %> locations</p>
-        <% if t.active %></p>
-          <span class="live">Live</span>
-        <% else %>
-          <span style="color: red">Ended</span>
-        <% end %>
+        <div class="active-btn">
+          <% if t.active %></p>
+            <span class="live">Live</span>
+          <% else %>
+            <span style="color: red">Ended</span>
+          <% end %>
+        </div>
       </div>
       <div class="card-product-infos">
         <% if t.bids.length > 0 %>
         <h2>Last bid: <%= t.bids.order(:amount).last.amount %> </h2>
         <% else %>
-        <h2>No bids yet!<h2> 
+        <h2>No bids yet!<h2>
         <% end %>
         <%= link_to "More details", tender_path(t), class: 'btn-home' %>
       </div>
