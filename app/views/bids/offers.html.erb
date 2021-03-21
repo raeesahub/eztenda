@@ -1,6 +1,7 @@
 <div class="container">
   <section>
-    <% @tenders.each do |t| %>
+    <% @tenders.reverse.each do |t| %>
+
       <div class="card-product">
         <img src= <%= t.business.image_url %> />
 
@@ -22,12 +23,12 @@
         </div>
       </div>
 
-
+     <% if t.bids.length > 0  %>
       <div class="titles">
         <h1 class="text-center m-5">BRANDS BIDS:</h1>
         <hr>
       </div>
-
+    <% end %>
       <div class= "offers-list">
         <% t.bids.each do |b|%>
           <div class= "offers-list-card p-3">

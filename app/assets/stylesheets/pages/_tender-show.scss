@@ -2,7 +2,8 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 60px;
-  margin-top: 40px;
+  margin-top: 60px;
+  padding: 20px;
 }
 
 .bar-info {
@@ -22,9 +23,6 @@
   color: $red;
 }
 
-.bid-start {
-  padding-top: 30px;
-}
 
 .my_class {
   background: $red;
@@ -37,4 +35,46 @@
 
 #accept-button, #reject-button {
   margin: 0px 20px;
+}
+
+.border-bar {
+  border-style: solid;
+  border-color: $red;
+  border-width: 1px;
+  border-radius: 20px;
+}
+
+.tender-bid {
+  align-self: center;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.bid-submit {
+  width: 500px;
+  justify-self: center;
+  height: auto;
+  margin: 0 auto;
+  // s
+}
+
+.bid-current {
+  background: #d7d1d1;
+  opacity: 0.9;
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+
+}
+
+.titles2 {
+  hr {
+    height: 6px;
+    width: 80px;
+    background: $red;
+    margin-bottom: 10px;
+
+  }
 }

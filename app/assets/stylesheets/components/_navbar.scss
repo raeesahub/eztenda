@@ -22,11 +22,11 @@
 
 .navbar-lewagon {
   justify-content: space-between;
-  // position: absolute;
+  // position: relative;
   width: 100%;
-  background: transparent;
+  background-color: transparent;
   box-shadow: none;
-  margin-top: 10px;
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -34,7 +34,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 70px;
+  width: 100px;
   border-radius: 50%;
 }
 

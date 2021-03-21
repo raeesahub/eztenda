@@ -34,7 +34,7 @@ bar6 = User.create!(email:"test6@test.com",password:"password",user_type: "bar")
 bar7 = User.create!(email:"test7@test.com",password:"password",user_type: "bar")
 bar8 = User.create!(email:"test8@test.com",password:"password",user_type: "bar")
 puts "Creating vendors..."
-vendor1 = User.create!(email:"test9@test.com",password:"password",user_type: "vendor", legal_name: "Melius Drinks Ltd. (Pedrino")
+vendor1 = User.create!(email:"test9@test.com",password:"password",user_type: "vendor", legal_name: "Melius Drinks Ltd. (Pedrino)")
 vendor2 = User.create!(email:"test10@test.com",password:"password",user_type: "vendor")
 vendor3 = User.create!(email:"test11@test.com",password:"password",user_type: "vendor")
 vendor4 = User.create!(email:"test12@test.com",password:"password",user_type: "vendor")
