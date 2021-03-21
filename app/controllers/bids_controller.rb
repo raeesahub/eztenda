@@ -35,11 +35,12 @@ class BidsController < ApplicationController
     @tender.active = false
     @tender.save
     @bid.confirmed = "accepted"
+    Contract.create!(bid: @bid,tender: @tender)
     @bid.save
     @tender.bids.each do |b| 
       b.update(confirmed: "rejected" ) if b.confirmed == "pending"
     end
-    redirect_to offers_path, notice: 'Bidding was accepted.'
+    redirect_to offers_path, notice: 'Bidding was accepted and a Contract was generated.'
     end
   end
 
