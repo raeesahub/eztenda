@@ -22,6 +22,7 @@ class Initial < ActiveRecord::Migration[6.0]
       t.integer :amount
       t.string :confirmed,default: "pending"
       t.string :incentives
+      t.string :RTM
       t.timestamps
     end
     create_table :categories do |t|
