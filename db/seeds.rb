@@ -55,7 +55,13 @@ las_iguanas = Business.create!(name: "Las Iguanas", description: "Eat Latin, Dri
 eat_tokyo = Business.create!(name: "Eat Tokyo", description: "Japanese restaurant", location: "London", number_of_venues: 2, user_id: bar4.id, image_url: "https://github.com/raeesahub/eztenda-files/blob/master/eattokyo.png?raw=true
 ")
 
-slug_lettuce = Business.create!(name: "Slug & Lettuce", description: "Cocktail Bar", location: "London", number_of_venues: 8, user_id: bar5.id, image_url: "https://github.com/raeesahub/eztenda-files/blob/master/eattokyo.png?raw=true
+slug_lettuce = Business.create!(name: "Slug & Lettuce", description: "Cocktail Bar", location: "London", number_of_venues: 8, user_id: bar5.id, image_url: "https://redcactusevents.b-cdn.net/wp-content/uploads/2018/12/the-slug-and-lettuce-logo.png
+")
+
+all_bar_one = Business.create!(name: "All Bar One", description: "Cocktail Bar", location: "London", number_of_venues: 16, user_id: bar5.id, image_url: "https://images.vouchercloud.com/image/upload/w_200,q_auto,fl_strip_profile,f_auto/all_bar_one_logo.jpg
+")
+
+dishoom = Business.create!(name: "Dishoom", description: "Bombay Cafe", location: "London", number_of_venues: 5, user_id: bar5.id, image_url: "https://www.thembsgroup.co.uk/wp-content/uploads/2020/05/Dishoom-logo-final.png
 ")
 
 puts "Creating tenders..."
@@ -158,7 +164,7 @@ tender9 = Tender.create!(
   categories_id: Category.find_by(description: "red wine").id
 )
 
-tender5 = Tender.create!(
+tender10 = Tender.create!(
   description: "Spritzer",
   start_date: Date.new(2021,3,21),
   end_date: Date.new(2021,11,21),
@@ -167,6 +173,28 @@ tender5 = Tender.create!(
   min_bid: "300",
   business_id: slug_lettuce.id,
   categories_id: Category.find_by(description: "spritzer").id
+  )
+
+tender11 = Tender.create!(
+  description: "Spritzer",
+  start_date: Date.new(2021,3,21),
+  end_date: Date.new(2021,12,21),
+  volume: "7000",
+  active: true,
+  min_bid: "1000",
+  business_id: all_bar_one.id,
+  categories_id: Category.find_by(description: "spritzer").id
+  )
+
+tender12 = Tender.create!(
+  description: "Whisky",
+  start_date: Date.new(2021,3,21),
+  end_date: Date.new(2022,6,21),
+  volume: "4000",
+  active: true,
+  min_bid: "1000",
+  business_id: dishoom.id,
+  categories_id: Category.find_by(description: "whisky").id
   )
 
 
