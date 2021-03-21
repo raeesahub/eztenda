@@ -1,12 +1,14 @@
 <div class="container">
 
   <h1>All Contracts</h1>
-  <% @contracts.each do |contract| %>
+  <div class="cards">
+    <% @contracts.each do |contract| %>
       <div class="card-contract">
         <p><strong>Customer:</strong> <%= contract.tender.business.user.legal_name %></p>
         <p><strong>Supplier:</strong> <%= contract.bid.user.legal_name %></p>
         <p><strong>Duration:</strong> <%= ((contract.tender.end_date - contract.tender.start_date).to_i / 30)  %> months</p>
         <%= link_to "Download contract", contracts_index_path(contract), class: 'btn-home'  %>
       </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
