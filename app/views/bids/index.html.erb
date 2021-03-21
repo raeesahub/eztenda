@@ -2,7 +2,7 @@
   <section>
     <% @bids.each do |t| %>
       <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <img src= <%= t.tender.business.image_url %> />
         <div class="card-product-infos">
           <h2>Offering: <%= t.description %> to <%= t.tender.business.name %></h2>
           <p>Price: £<%= t.amount %></p>
