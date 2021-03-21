@@ -34,8 +34,8 @@ bar6 = User.create!(email:"test6@test.com",password:"password",user_type: "bar")
 bar7 = User.create!(email:"test7@test.com",password:"password",user_type: "bar")
 bar8 = User.create!(email:"test8@test.com",password:"password",user_type: "bar")
 puts "Creating vendors..."
-vendor1 = User.create!(email:"test9@test.com",password:"password",user_type: "vendor", legal_name: "Melius Drinks Ltd. (Pedrino)")
-vendor2 = User.create!(email:"test10@test.com",password:"password",user_type: "vendor")
+vendor1 = User.create!(email:"test9@test.com",password:"password",user_type: "vendor")
+vendor2 = User.create!(email:"test10@test.com",password:"password",user_type: "vendor", legal_name: "Melius Drinks Ltd. (Pedrino)")
 vendor3 = User.create!(email:"test11@test.com",password:"password",user_type: "vendor")
 vendor4 = User.create!(email:"test12@test.com",password:"password",user_type: "vendor")
 vendor5 = User.create!(email:"test13@test.com",password:"password",user_type: "vendor")
@@ -81,6 +81,24 @@ product3 = Product.create!(
   name: "The Botanist",
   user_id: vendor1.id,
   description: "The Botanist’s Islay Dry Gin is a premium spirit with a bottle to match. It’s mild and herby with a floral flavour profile stemming from the variety of botanicals used.",
+)
+
+product4 = Product.create!(
+  name: "Vermouth & Tonic Spritz",
+  user_id: vendor2.id,
+  description: "Vermouth & Tonic",
+)
+
+product5 = Product.create!(
+  name: "Sherry & Tonic Spritz",
+  user_id: vendor2.id,
+  description: "Sherry & Tonic Spritz",
+)
+
+product6 = Product.create!(
+  name: "Ruby & Tonic Spritz",
+  user_id: vendor2.id,
+  description: "Ruby & Tonic Spritz",
 )
 
 puts "Creating tenders..."
