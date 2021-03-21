@@ -33,6 +33,15 @@
   color: white;
 }
 
+.my_class:hover {
+  background: $white;
+  border-color: $red;
+  padding: 0px;
+  border-width: 0px;
+  border-style: outset;
+  color: white;
+}
+
 #accept-button, #reject-button {
   margin: 0px 20px;
 }
