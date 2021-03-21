@@ -38,6 +38,8 @@
               <p><strong>Incentives: </strong><%= b.incentives %></p>
               <% if b.confirmed == "accepted" %></p>
                 <span style="color: green">Accepted</span>
+              <% elsif b.confirmed == "pending" %></p>
+                <span style="color: grey">Pending</span>
               <% else %>
                 <span style="color: red">Rejected</span>
               <% end %>
