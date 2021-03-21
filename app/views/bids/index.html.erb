@@ -1,25 +1,25 @@
-<div class="container">
-  <section>
-    <% @bids.each do |t| %>
-      <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div class="card-product-infos">
-          <h2>Offering: <%= t.description %> to <%= t.tender.business.name %></h2>
-          <p>Price: £<%= t.amount %></p>
-          <div class="active-btn">
-            <% if t.confirmed == "accepted" %></p>
-              <span style="color: green">Confirmed</span>
-            <% elsif t.confirmed == "pending" %></p>
-              <span style="color: grey">Pending</span>
-            <% else %>
-              <span style="color: red">Rejected</span>
-            <% end %>
+<section>
+  <div class="container">
+      <% @bids.each do |t| %>
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h2>Offering: <%= t.description %> to <%= t.tender.business.name %></h2>
+            <p>Price: £<%= t.amount %></p>
+            <div class="active-btn">
+              <% if t.confirmed == "accepted" %></p>
+                <span style="color: green">Confirmed</span>
+              <% elsif t.confirmed == "pending" %></p>
+                <span style="color: grey">Pending</span>
+              <% else %>
+                <span style="color: red">Rejected</span>
+              <% end %>
+            </div>
+          </div>
+          <div class="card-product-infos">
+            <h2>Last bid: £<%= t.tender.bids.last.amount %></h2>
           </div>
         </div>
-        <div class="card-product-infos">
-          <h2>Last bid: £<%= t.tender.bids.last.amount %></h2>
-        </div>
-      </div>
-    <% end %>
-  </section>
-</div>
+      <% end %>
+  </div>
+</section>
