@@ -33,10 +33,10 @@
           <p Style= "color: white"><strong>CURRENT BID:</strong></p>
           <h2 class="bid-amount"><strong>£ <%= @tender.bids.order(:amount).last.amount %></strong></h2>
         </div>
+      </div>
         <% else %>
         <p>No Bids so far !</p>
         <% end %>
-      </div>
 
 
         <% if current_user.user_type === "vendor" %>
