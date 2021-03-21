@@ -1,0 +1,14 @@
+<section>
+  <div class="container">
+  <% @products.each do | product | %> 
+        <div class="card-product">
+          <div class="card-product-infos pl-5">
+            <h2><%= product.name %></h2>
+            <p><%= product.description %></p>
+          </div>
+          <div class="card-product-infos">
+          </div>
+        </div>
+        <% end %> 
+  </div>
+</section>
