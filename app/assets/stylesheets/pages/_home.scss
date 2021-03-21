@@ -30,7 +30,8 @@
 }
 
 .btn-home:hover {
-  background: #EA3F2C;
-  color: white;
+  background: $white;
+  color: $red;
   text-decoration: none;
+  border: 1px solid $red;
 }
