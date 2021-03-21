@@ -1,8 +1,8 @@
 class TendersController < ApplicationController
   def index
     if current_user.user_type == "bar"
-      @tender_arrray = Business.where(user_id: current_user.id).map(&:tenders).flatten 
-    else 
+      @tender_arrray = Business.where(user_id: current_user.id).map(&:tenders).flatten
+    else
       @tender_arrray =Tender.all
     end
     if params[:query].present?
@@ -29,6 +29,7 @@ class TendersController < ApplicationController
 
   def create
     @tender = Tender.create!(strong_params)
+    @tender.active = true
     if @tender.save
       redirect_to tender_path(@tender)
     else
