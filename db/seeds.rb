@@ -63,6 +63,25 @@ all_bar_one = Business.create!(name: "All Bar One", description: "Cocktail Bar",
 
 dishoom = Business.create!(name: "Dishoom", description: "Bombay Cafe", location: "London", number_of_venues: 5, user_id: bar5.id, image_url: "https://www.thembsgroup.co.uk/wp-content/uploads/2020/05/Dishoom-logo-final.png
 ")
+puts "Creating Products"
+
+product1 = Product.create!(
+  name: "Gordons Gin",
+  user_id: vendor1.id,
+  description: "Gordon's. Refreshing yet dry. Mix Gordon's with Pleasure. Re-mix yourself.",
+)
+
+product2 = Product.create!(
+  name: "Bombay Saphire",
+  user_id: vendor1.id,
+  description: "Known as one of the world’s most famous gins, Bombay Sapphire contains ten botanicals sourced from countries covering almost every continent. Alongside juniper, the spirit features lemon peel, coriander, angelica root, orris, grains of paradise, cubeb berries, cassia bark, almonds and liquorice.",
+)
+
+product3 = Product.create!(
+  name: "The Botanist",
+  user_id: vendor1.id,
+  description: "The Botanist’s Islay Dry Gin is a premium spirit with a bottle to match. It’s mild and herby with a floral flavour profile stemming from the variety of botanicals used.",
+)
 
 puts "Creating tenders..."
 tender1 = Tender.create!(
@@ -274,7 +293,8 @@ contract1 = Contract.create(
   tender: tender1,
   bid: bid4
 
-
 )
+
+
 
 puts "completed"

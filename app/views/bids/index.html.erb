@@ -6,6 +6,9 @@
           <div class="card-product-infos">
             <h2>Offering: <%= t.description %> to <%= t.tender.business.name %></h2>
             <p>Price: £<%= t.amount %></p>
+            <% if !t.product.nil? %>
+            <%= t.product.name %> 
+            <% end %> 
             <div class="active-btn">
               <% if t.confirmed == "accepted" %></p>
                 <span style="color: green">Confirmed</span>

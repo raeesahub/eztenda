@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :businesses
   get 'offers', to: 'bids#offers'
+  get 'products/index', to: 'products#index'
+  get 'products/:id', to: 'products#show'
 
   get '/contracts/index',to: 'contracts#index'
 
