@@ -5,10 +5,19 @@
   box-shadow: none;
   margin-top: 10px;
   color: white;
+  text-transform: uppercase;
 
   #navbar-text {
-    color: white;
+  color: $white;
+  transition: .2s;
+  display: inline-block;
+  margin-right: 35px;
+
+  &:hover {
+   color: $red;
   }
+}
+
 }
 
 .navbar-lewagon {
@@ -25,6 +34,18 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 60px;
+  width: 70px;
   border-radius: 50%;
+}
+
+
+#navbar-text {
+  text-transform: uppercase;
+  transition: .2s;
+  display: inline-block;
+  margin-right: 25px;
+
+  &:hover {
+   color: $red;
+  }
 }
