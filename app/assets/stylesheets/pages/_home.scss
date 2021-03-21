@@ -26,7 +26,7 @@
   border-radius: 4px;
   background: $red;
   transition: background 0.3s ease;
-  border: none;
+  border: 1px solid $red;
 }
 
 .btn-home:hover {
