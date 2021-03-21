@@ -1,13 +1,18 @@
 class TendersController < ApplicationController
   def index
+    if current_user.user_type == "bar"
+      @tender_arrray = Business.where(user_id: current_user.id).map(&:tenders).flatten 
+    else 
+      @tender_arrray =Tender.all
+    end
     if params[:query].present?
-      @tenders = Tender.search(params[:query])
+      @tenders = @tender_arrray.search(params[:query])
     elsif params[:category].present?
       category_id = params[:category].to_i
-      y = Tender.where(categories_id: category_id)
+      y = @tender_arrray.where(categories_id: category_id)
       @tenders = y
     else
-      @tenders = Tender.all
+      @tenders = @tender_arrray
     end
   end
 
