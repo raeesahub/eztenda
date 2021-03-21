@@ -29,14 +29,15 @@
           <p Style= "color: #8e7f7f">CURRENT BID</p>
           <h2 class="bid-amount">£ <%= @tender.bids.order(:amount).last.amount %></h2>
         </div>
-        <% else %> 
-        No Bids so far ! 
-        <% end %> 
+        <% else %>
+        No Bids so far !
+        <% end %>
         <hr>
         <% if current_user.user_type === "vendor" %>
         <%= simple_form_for [@tender, @bids] do |f| %>
           <%= f.input :description, label: "Product"%>
           <%= f.input :amount, label: "Signing Bonus"%>
+          <%= f.input :RTM, label: "RTM" %>
           <%= f.input :incentives, label: "Incentives"%>
           <%= f.submit 'Request Booking', class: 'btn btn-danger mx-auto d-block mt-2' %>
         <%end%>
