@@ -14,7 +14,7 @@ class ContractsController < ApplicationController
         @contracts << Contract.where(id: bid.contract_id)
       end
     end
-    @contracts = @contracts.flatten
+    @contracts = @contracts.flatten.select{|c| !c.nil?}
     return @contracts
   end
 
