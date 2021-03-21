@@ -7,11 +7,11 @@ Rails.application.routes.draw do
 
   get '/contracts/index',to: 'contracts#index'
 
-  get '/contracts/:id',to: 'contracts#download'
+  get '/contracts/:id',to: 'contracts#download', as: 'contracts'
 
   resources :bids,only:[:create,:index]
-  resources :bids do 
-    collection do 
+  resources :bids do
+    collection do
       post :accept_bid
       post :reject_bid
     end
