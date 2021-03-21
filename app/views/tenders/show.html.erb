@@ -49,6 +49,7 @@
             <%= f.input :description, label: "Product"%>
             <%= f.input :amount, label: "Signing Bonus"%>
             <%= f.input :incentives, label: "Incentives"%>
+            <%= f.association :product,:collection => @products%>
             <%= f.submit 'Submit Bid', class: 'btn btn-danger mx-auto d-block mt-2' %>
           <%end%>
         </div>

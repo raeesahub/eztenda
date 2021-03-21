@@ -18,12 +18,14 @@ class TendersController < ApplicationController
 
   def show
     @tender = Tender.find(params[:id])
+    @products = Product.where(user_id: current_user.id)
     @bids = Bid.new
   end
 
   def new
     @tender = Tender.new
     @business = Business.all
+    @products = Product.where(user_id: current_user.id)
     @categories = Category.all
   end
 
