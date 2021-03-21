@@ -20,6 +20,7 @@ class ContractsController < ApplicationController
 
   def download
     # the recommended method is POST
+    date = Date.today
     @contract = Contract.find(params[:id])
     p @contract
     # may be restricted by ":via => :post" in your routes.rb
@@ -30,9 +31,29 @@ class ContractsController < ApplicationController
       # run the conversion and store the result into the "pdf" variable
       pdf = client.convertString("<html>
   <body>
-  Contract
-  Customer : #{@contract.tender.business.user.legal_name}
+  <h1> Supply Agreement </h1>
+  <h2> Parties </h2>
   Supplier : #{@contract.bid.user.legal_name}
+  <br>
+  Customer : #{@contract.tender.business.user.legal_name}
+  <hr>
+  <h2> Supply </h2>
+  Products : #{@contract.bid.description}
+  <br>
+
+  RTM : #{@contract.bid.RTM}
+  <hr>
+  <h2> Duration </h2>
+  Start Date : #{@contract.tender.start_date}
+  <br>
+
+  End Date : #{@contract.tender.end_date}
+  <h2> Commitments </h2>
+  The Supplier commits to the following: 
+  <br>
+  #{@contract.bid.incentives}
+ 
+  Date: #{date}
   </body>
 </html>")
 
