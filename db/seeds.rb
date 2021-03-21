@@ -25,7 +25,7 @@ CATEGORIES.each do |category|
 end
 
 puts "Creating bars..."
-bar1 = User.create!(email:"test1@test.com",password:"password",user_type: "bar")
+bar1 = User.create!(email:"test1@test.com",password:"password",user_type: "bar", legal_name: "Stonegate Pub Company, 3 Monkspath Hall Road, Solihull, West Midlands B90 4SJ")
 bar2 = User.create!(email:"test2@test.com",password:"password",user_type: "bar")
 bar3 = User.create!(email:"test3@test.com",password:"password",user_type: "bar")
 bar4 = User.create!(email:"test4@test.com",password:"password",user_type: "bar")
@@ -34,7 +34,7 @@ bar6 = User.create!(email:"test6@test.com",password:"password",user_type: "bar")
 bar7 = User.create!(email:"test7@test.com",password:"password",user_type: "bar")
 bar8 = User.create!(email:"test8@test.com",password:"password",user_type: "bar")
 puts "Creating vendors..."
-vendor1 = User.create!(email:"test9@test.com",password:"password",user_type: "vendor")
+vendor1 = User.create!(email:"test9@test.com",password:"password",user_type: "vendor", legal_name: "Melius Drinks Ltd. (Pedrino")
 vendor2 = User.create!(email:"test10@test.com",password:"password",user_type: "vendor")
 vendor3 = User.create!(email:"test11@test.com",password:"password",user_type: "vendor")
 vendor4 = User.create!(email:"test12@test.com",password:"password",user_type: "vendor")
@@ -197,6 +197,27 @@ tender12 = Tender.create!(
   categories_id: Category.find_by(description: "whisky").id
   )
 
+tender13 = Tender.create!(
+  description: "Spritzer",
+  start_date: Date.new(2021,3,21),
+  end_date: Date.new(2022,3,21),
+  volume: "9000",
+  active: true,
+  min_bid: "1000",
+  business_id: be_at_one.id,
+  categories_id: Category.find_by(description: "spritzer").id
+  )
+
+tender12 = Tender.create!(
+  description: "Red Wine",
+  start_date: Date.new(2021,3,21),
+  end_date: Date.new(2021,6,21),
+  volume: "400",
+  active: true,
+  min_bid: "500",
+  business_id: dishoom.id,
+  categories_id: Category.find_by(description: "red wine").id
+  )
 
 bid1 = Bid.create!(
   description: "Gordons",
