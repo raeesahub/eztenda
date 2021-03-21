@@ -247,4 +247,13 @@ tender5 = Tender.create!(
   business_id: slug_lettuce.id
   )
 
+puts "creating_contract"
+
+contract1 = Contract.create(
+  tender: tender1,
+  bid: bid4
+
+
+)
+
 puts "completed"
