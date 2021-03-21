@@ -97,3 +97,21 @@
   }
 }
 
+.card-contract {
+  width: 300px;
+  padding: 24px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+}
+
+
+.contract-link {
+  text-decoration: none !important;
+  color: $black;
+}
+
+.contract-link:hover {
+  text-decoration: none !important;
+  color: $red;
+}
